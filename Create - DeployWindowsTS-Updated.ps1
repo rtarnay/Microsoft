@@ -11,19 +11,23 @@ $ErrorActionPreference = 'SilentlyContinue'
 #Client Specific Settings 
 $DJuserpassword = Get-Credential
 $TaskSequenceName = 'Deploy - Windows 10 Enterprise'
-$ConfigMgrServer = 'cm01.tarnaylab.com' 
-$DJAccount = 'TARNAYLAB\CM_DJ'
-$Domain = 'contoso.com'
+$ConfigMgrServer = '' 
+$DJAccount = ''
+$Domain = ''
 $OU = 'LDAP://OU=Workstations,OU=Contoso,DC=contoso,DC=com'
-$UserName = 'TARNAYLAB'
-$OrganisationName = 'Contoso'
+$UserName = ''
+$OrganisationName = ''
 $OSName = 'Windows 10*'
 $BuildScriptsPackage = Get-CMPackage -Name '*Build Scripts*'
 $USMTPackage = Get-CMPackage -Name '*User State Migration*'
 
 #Import ConfigMgr PowerShell Module 
 
-Import-Module $env:SMS_ADMIN_UI_PATH.Replace("\bin\i386","\bin\configurationmanager.psd1")$SiteCode = Get-PSDrive -PSProvider CMSITESet-Location "$($SiteCode.Name):\"
+Import-Module $env:SMS_ADMIN_UI_PATH.Replace("\bin\i386","\bin\configurationmanager.psd1")
+
+$SiteCode = Get-PSDrive -PSProvider CMSITE
+
+Set-Location "$($SiteCode.Name):\"
 
 
 #Set Common Task Sequence Conditional Variables Here 
