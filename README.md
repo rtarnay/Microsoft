@@ -1,2 +1,2 @@
 # Microsoft
-Contains Microsoft related automation solutions
+Contains Microsoft related automation solutions.
