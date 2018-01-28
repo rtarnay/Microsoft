@@ -46,7 +46,7 @@ Import-Module $env:SMS_ADMIN_UI_PATH.Replace("\bin\i386","\bin\configurationmana
 
 #Client Specific Settings 
 $DJuserpassword = Get-Credential
-$TaskSequenceName = 'Test Deploy 4 - Windows 10 Enterprise'
+$TaskSequenceName = 'Test Deploy - Windows 10 Enterprise'
 $ConfigMgrServer = '' 
 $DJAccount = ''
 $Domain = ''
