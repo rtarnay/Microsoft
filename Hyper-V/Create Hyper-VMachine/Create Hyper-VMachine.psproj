@@ -1,0 +1,14 @@
+﻿<Project>
+	<Version>1.0</Version>
+	<FileID>dba6ebcc-45a0-44aa-a97b-d871b134ca95</FileID>
+	<ProjectType>1</ProjectType>
+	<Files>
+		<File ReferenceName="" Build="0">Create Hyper-VMachine.psd1</File>
+		<File ReferenceName="" Build="0">Create Hyper-VMachine.psm1</File>
+		<File ReferenceName="" Build="2">Create Hyper-VMachine.Help.xml</File>
+	</Files>
+	<OpenFiles>
+		<File>Create Hyper-VMachine.psd1</File>
+		<File>Create Hyper-VMachine.psm1</File>
+	</OpenFiles>
+</Project>

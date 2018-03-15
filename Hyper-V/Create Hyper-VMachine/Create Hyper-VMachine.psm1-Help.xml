@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<helpItems xmlns="http://msh" schema="maml">
+	<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+		<command:details>
+			<command:name>New-HyperVMachine</command:name>
+			<maml:description>
+				<maml:para>A brief description of the New-VirtualMachine function.</maml:para>
+			</maml:description>
+			<maml:copyright>
+				<maml:para></maml:para>
+			</maml:copyright>
+			<command:verb>New</command:verb>
+			<command:noun>HyperVMachine</command:noun>
+			<dev:version/>
+		</command:details>
+		<maml:description>
+			<maml:para>A detailed description of the New-VirtualMachine function.</maml:para>
+		</maml:description>
+		<command:syntax>
+			<command:syntaxItem>
+				<maml:name>New-HyperVMachine</maml:name>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+					<maml:name>CreateNewSwitch</maml:name>
+					<maml:description>
+						<maml:para></maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+					<maml:name>SwitchName</maml:name>
+					<maml:description>
+						<maml:para>Use the SwitchName parameter to set name of your Hyper-V Switch.</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+					<maml:name>VMName</maml:name>
+					<maml:description>
+						<maml:para>Use the VMName parameter to name your Hyper-V Virtual Machine.</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+					<maml:name>VMLocation</maml:name>
+					<maml:description>
+						<maml:para>Use the VMLocation parameter to set the location where the Hyper-V VM is created .</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+					<maml:name>VHDPath</maml:name>
+					<maml:description>
+						<maml:para></maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+					<maml:name>VHDSize</maml:name>
+					<maml:description>
+						<maml:para>Set the size of the VHD for the Hyper-V VM.</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+					<maml:name>MemSize</maml:name>
+					<maml:description>
+						<maml:para>Configure the amount of memeory the Hyper-V VM will use.</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				</command:parameter>
+			</command:syntaxItem>
+		</command:syntax>
+		<command:parameters>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+				<maml:name>CreateNewSwitch</maml:name>
+				<maml:description>
+					<maml:para></maml:para>
+				</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue></dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+				<maml:name>SwitchName</maml:name>
+				<maml:description>
+					<maml:para>Use the SwitchName parameter to set name of your Hyper-V Switch.</maml:para>
+				</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue></dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+				<maml:name>VMName</maml:name>
+				<maml:description>
+					<maml:para>Use the VMName parameter to name your Hyper-V Virtual Machine.</maml:para>
+				</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue></dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+				<maml:name>VMLocation</maml:name>
+				<maml:description>
+					<maml:para>Use the VMLocation parameter to set the location where the Hyper-V VM is created .</maml:para>
+				</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue></dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+				<maml:name>VHDPath</maml:name>
+				<maml:description>
+					<maml:para></maml:para>
+				</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue></dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+				<maml:name>VHDSize</maml:name>
+				<maml:description>
+					<maml:para>Set the size of the VHD for the Hyper-V VM.</maml:para>
+				</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue></dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named">
+				<maml:name>MemSize</maml:name>
+				<maml:description>
+					<maml:para>Configure the amount of memeory the Hyper-V VM will use.</maml:para>
+				</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue></dev:defaultValue>
+			</command:parameter>
+		</command:parameters>
+		<maml:alertSet>
+			<maml:title></maml:title>
+			<maml:alert>
+				<maml:para>Additional information about the function.</maml:para>
+			</maml:alert>
+		</maml:alertSet>
+		<command:examples>
+			<command:example>
+				<maml:title>--------------------------  EXAMPLE 0  --------------------------</maml:title>
+				<maml:introduction>
+					<maml:para></maml:para>
+				</maml:introduction>
+				<dev:code>PS C:\&gt; New-VirtualMachine -SwitchName &#39;Value1&#39; -VMName &#39;Value2&#39;</dev:code>
+				<dev:remarks>
+					<maml:para></maml:para>
+				</dev:remarks>
+			</command:example>
+		</command:examples>
+	</command:command>
+</helpItems>
+
