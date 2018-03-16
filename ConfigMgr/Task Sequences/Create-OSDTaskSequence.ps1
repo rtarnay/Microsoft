@@ -11,7 +11,6 @@
 This script will perform the following:
 
 #Creates a new Windows OSD Task Sequence
-#Creates
 #Recreates any Task Sequence steps,groups or conditions if they have been deleted/modified
 #Automatically adds any new Driver Packs and Tier 1 Applications to Task Sequencef
 
