@@ -51,14 +51,19 @@ Set-Location $SiteCode +":\"
 
 New-CMSiteSystemServer -SiteSystemServerName $SiteServerName -SiteCode $SiteCode -Verbose
 
-
 #Install The Distribution Point Role
 
 $DPParams = @{
-SiteSystemServerName =$SiteServerName;
-SiteCode = $SiteCode;
-MinimumFreeSpaceMB = '5000';
-CertificateExpirationTime = '2025/10/10 17:45:00';
+    SiteSystemServerName = "CM02.tarnaylab.com"
+    SiteCode = "TP1"
+    CertificateExpirationTimeUtc = '2020/30/01 18:00:00'
+    InstallInternetServer = $True
+    AllowPrestaging = $True
+    EnablePXE = $True
+    EnableUnknownComputerSupport = $False
+    MinimumFreeSpaceMB = '5000'
+    AllowContentValidation = $True
+    ClientConnectionType = 'Intranet'
 
 }
 
@@ -66,7 +71,38 @@ CertificateExpirationTime = '2025/10/10 17:45:00';
 Write-Host -Object('The Distribution role will be installed on Site Server {0}' -f $SMPParams.SiteSystemServerName )
 
 
-Add-CMDistributionPoint @DPParams -InstallInternetServer -EnablePXESupport -EnableValidateContent -Verbose
+Add-CMDistributionPoint @DPParams -Verbose
+
+
+
+#Pester Test for Distribution Point Config
+
+describe 'Distribution Point Configuration' {
+
+
+	## Arrange/Act --execute the stuff to minimize code in the assertions
+	$DPInfo = Get-CMDistributionPointInfo -SiteSystemServerName $SiteSystemServerName -SiteCode $SiteCode
+
+
+	it 'Should be PXE Enabled' {
+		$DPInfo.IsPXE | should be $DPParams.EnablePXE
+	}
+
+  
+	it 'Unknown Computer Support Disabled ' {
+		$DPInfo.SupportUnknownMachines | should be $DPParams.EnableUnknownComputerSupport
+	}
+
+
+	it 'Prestaging Content Enabled' {
+		$DPInfo.PreStagingAllowed | should be $DPParams.AllowPrestaging
+	}
+
+
+
+	## .....
+}
+
 
 
 #Install the State Migration Point Role 
