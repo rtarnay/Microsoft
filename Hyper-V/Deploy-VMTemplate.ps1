@@ -1,11 +1,13 @@
 ﻿
 #Creates Virtual Machine based on Hyper-V Template Files
-#Renames VHD and VM and 
+#Renames VHD file and Virtual Machine from template defaults and 
 #Sets VM performance according to VM size specified
 #Adds VM to HA Cluster if specified - Run on Hyper-V Cluster node if adding to Failover Cluster 
 #Performs Pester Tests to Verify that VM is Configured and Running as Expected 
 
 #Example: .\Deploy-VMTemplate.ps1 -Name TESTVM01 -VMType Medium -AddtoCluster True
+
+#Update the variables on lines 26-31 specific to your environment
 
 [cmdletbinding(SupportsShouldProcess)] 
  
