@@ -1,10 +1,11 @@
 ﻿
 #Creates Virtual Machine based on Hyper-V Template Files
-#Renames VHD and VM and sets VM performance accordingly
-#Adds to HA Cluster if specified - Run on Hyper-V Cluster node if adding to Failover Cluster 
+#Renames VHD and VM and 
+#Sets VM performance according to VM size specified
+#Adds VM to HA Cluster if specified - Run on Hyper-V Cluster node if adding to Failover Cluster 
 #Performs Pester Tests to Verify that VM is Configured and Running as Expected 
 
-#Example: .\Deploy-VMTemplate_Updated.ps1 -Name TESTVM01 -VMType Medium -AddtoCluster True
+#Example: .\Deploy-VMTemplate.ps1 -Name TESTVM01 -VMType Medium -AddtoCluster True
 
 [cmdletbinding(SupportsShouldProcess)] 
  
@@ -21,7 +22,7 @@ Param(
 ) 
 
 #Set Variables for VM and VHD locations as required
-$ClientName = "Bisinella"
+$ClientName = "TARNAYLAB"
 $TemplateVMName = "VM_Template"
 $TemplatePath = "C:\ClusterStorage\Volume1\Template\VM_Template\Virtual Machines\17D80070-9D7A-4B75-89A5-840FE58BFD74.vmcx"
 $VHDPath = "C:\ClusterStorage\Volume1\VHD"
@@ -62,7 +63,7 @@ $setParam = @{
 } 
 
 
-Write-Host "Creating new $VMType virtual machine from $ClientName Hyper-V Template" 
+Write-Verbose "Creating new $VMType virtual machine from $ClientName Hyper-V Template" 
 
 #Import the VM Template
 
