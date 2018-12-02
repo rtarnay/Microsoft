@@ -6,6 +6,8 @@
 #LAPS
 #USB Removable Storage 
 
+$User = "Contoso\Win10Test"
+$ExeDownloadPath="C:\Temp\SpotifySetup.exe"
 
 #BitLocker Tests
 
@@ -102,11 +104,11 @@ Describe 'AppLocker' {
 
 $AppIDSvc =  Get-Service -Name AppIDSvc
 
-Invoke-WebRequest -Uri https://download.scdn.co/SpotifySetup.exe -UseBasicParsing -OutFile "C:\temp\SpotifySetup.exe"
+Invoke-WebRequest -Uri https://download.scdn.co/SpotifySetup.exe -UseBasicParsing -OutFile $ExeDownloadPath
 
-$AppLockerPolicy = Get-AppLockerPolicy -Effective | Test-AppLockerPolicy -Path "$env:windir\System32\WindowsPowerShell\v1.0\powershell.exe" -User CareSuper\Win10Test01
+$AppLockerPolicy = Get-AppLockerPolicy -Effective | Test-AppLockerPolicy -Path "$env:windir\System32\WindowsPowerShell\v1.0\powershell.exe" -User $User
 
-$AppLockerPolicy2 = Get-AppLockerPolicy -Effective | Test-AppLockerPolicy -Path "C:\Temp\SpotifySetup.exe" -User CareSuper\Win10Test01
+$AppLockerPolicy2 = Get-AppLockerPolicy -Effective | Test-AppLockerPolicy -Path $ExeDownloadPath -User $User
 
 
 it "AppLocker Running" { 
